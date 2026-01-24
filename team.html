@@ -1,1 +1,186 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>メンバー表</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #F9EFE6;
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 48px;
+      color: #ff9999;
+      margin-bottom: 20px;
+    }
+
+    .button-group {
+      margin-bottom: 30px;
+    }
+
+    .toggle-btn {
+      background-color: #53ABC3;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 0 10px;
+      font-size: 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .toggle-btn:hover {
+      background-color: #3a8ca8;
+    }
+
+    .member-section {
+      display: none;
+      max-width: 900px;
+      margin: 0 auto;
+      background-color: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .member-section.active {
+      display: block;
+    }
+
+.team-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;              
+  flex-wrap: nowrap;     
+}
+
+.team-column {
+  width: 48%;            
+  text-align: left;
+}
+    .team-title {
+      font-size: 20px;
+      color: #53ABC3;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 20px;
+    }
+
+    li {
+      font-size: 16px;
+      color: #333;
+      margin: 4px 0;
+    }
+   .title {
+  font-family: 'Playfair Display', serif;
+  font-size: 64px;
+  color: #ff9999;
+  text-align: center;
+  margin: 40px 0 20px;
+  opacity: 0;
+  animation: fadeInUp 1.8s ease-out forwards;
+}
+    @keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+  </style>
+</head>
+<body>
+
+  <h1 class="title">Team</h1>
+
+  <div class="button-group">
+    <button class="toggle-btn" onclick="showSection('tennis')">テニス</button>
+    <button class="toggle-btn" onclick="showSection('amusement')">富士急</button>
+  </div>
+
+  <!-- テニスチーム -->
+  <div id="tennis" class="member-section active">
+    <div class="team-row">
+      <div class="team-column">
+        <div class="team-title">チームT</div>
+        <ul>
+          <li>たく</li>
+          <li>神内</li>
+          <li>ゆうた</li>
+          <li>さなみ</li>
+          <li>ゆう</li>
+          <li>なお</li>
+          <li>はらりく</li>
+          <li>そら</li>
+        </ul>
+      </div>
+      <div class="team-column">
+        <div class="team-title">チームD</div>
+        <ul>
+          <li>大介</li>
+          <li>いつき</li>
+          <li>まい</li>
+          <li>はるな</li>
+          <li>かな</li>
+          <li>ひいろ</li>
+          <li>たける</li>
+          <li>しゅうた</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 遊園地チーム -->
+  <div id="amusement" class="member-section">
+    <div class="team-row">
+      <div class="team-column">
+        <div class="team-title">乗る</div>
+        <ul>
+          <li>かな</li>
+          <li>ゆう</li>
+          <li>さなみ</li>
+          <li>たける</li>
+          <li>しゅうた</li>
+        </ul>
+      </div>
+      <div class="team-column">
+        <div class="team-title">そこそこ</div>
+        <ul>
+          <li>まい</li>
+          <li>はるな</li>
+          <li>ひいろ</li>
+          <li>なお</li>
+          <li>はらりく</li>
+          <li>そら</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('.member-section').forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
 
