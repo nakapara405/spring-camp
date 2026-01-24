@@ -1,1 +1,145 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Items</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #F9EFE6;
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
 
+    .container-box {
+      max-width: 700px;
+      margin: 0 auto;
+      background-color: #fff;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: left;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 48px;
+      color: #ff9999;
+      margin: 16px 0 12px;
+      text-align: center;
+      opacity: 0;
+      animation: fadeInUp 1.2s ease-out forwards;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .category-title {
+      font-size: 20px;
+      color: #53ABC3;
+      margin: 24px 0 12px;
+      border-bottom: 1px solid #53ABC3;
+      padding-bottom: 4px;
+    }
+
+    .checklist label {
+      display: block;
+      font-size: 16px;
+      color: #333;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+
+    .checklist input[type="checkbox"] {
+      accent-color: #53ABC3;
+      margin-right: 10px;
+      transform: scale(1.2);
+    }
+
+   .note {
+  display: block;        
+  font-size: 13px;
+  color: #777;
+  margin-left: 28px;      
+  margin-top: 4px;        
+}
+  </style>
+</head>
+<body>
+
+  <div class="container-box">
+    <h1>Items</h1>
+
+    <div class="checklist">
+
+      <!-- 日用品 -->
+      <div class="category-title">日用品</div>
+      <label><input type="checkbox">雨具</label>
+      <label><input type="checkbox">カイロ</label>
+      <label><input type="checkbox">歯ブラシ</label>
+      <label><input type="checkbox">ハンカチ</label>
+      <label><input type="checkbox">ティッシュ</label>
+      <label><input type="checkbox">汗拭きシート</label>
+      <label><input type="checkbox">眼鏡・コンタクト</label>
+      <label><input type="checkbox">日焼け止め</label>
+      <label><input type="checkbox">ドライヤー・ヘアアイロン</label>
+      <label>
+        <input type="checkbox">シャンプー・コンディショナー
+        <span class="note">（備え付け有）</span>
+      </label>
+      <label><input type="checkbox">洗顔料・メイク落とし・化粧品</label>
+      <label><input type="checkbox">剃刀・髭剃り</label>
+      <label><input type="checkbox">くし・整髪料</label>
+      <label><input type="checkbox">生理用品</label>
+      <label><input type="checkbox">常備薬</label>
+
+      <!-- 電子機器 -->
+      <div class="category-title">電子機器</div>
+      <label><input type="checkbox">スマホ</label>
+      <label><input type="checkbox">充電器</label>
+      <label><input type="checkbox">モバイルバッテリー</label>
+
+      <!-- 衣類 -->
+      <div class="category-title">衣類</div>
+      <label><input type="checkbox">着替え</label>
+      <label><input type="checkbox">下着・靴下</label>
+      <label><input type="checkbox">パジャマ</label>
+      <label><input type="checkbox">スポーツウェア</label>
+      <label>
+        <input type="checkbox">上着
+        <span class="note">（東京よりも寒いです）</span>
+      </label>
+      <label><input type="checkbox">バスタオル</label>
+      <label><input type="checkbox">汗拭きタオル</label>
+
+      <!-- 貴重品 -->
+      <div class="category-title">貴重品</div>
+      <label><input type="checkbox">財布</label>
+      <label><input type="checkbox">合宿費</label>
+      <label><input type="checkbox">バス代(990円 ICカード可)</label>
+      <label><input type="checkbox">富士急で使うお金(5,000円-7,000円)</label>
+      <label><input type="checkbox">保険証</label>
+
+      <!-- その他 -->
+      <div class="category-title">その他</div>
+      <label><input type="checkbox">1日目のお昼</label>
+      <label><input type="checkbox">テニスラケット</label>
+      <label><input type="checkbox">テニスシューズ</label>
+
+    </div>
+  </div>
+
+</body>
+</html>
