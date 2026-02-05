@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -7,237 +6,151 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
   <style>
-   body {
-  margin: 0;
-  padding: 0;
-  font-family: 'M PLUS Rounded 1c', sans-serif;
-  background-image: url('https://raw.githubusercontent.com/takaichinaenae/spring-camp/main/top_page.png');
-  
-  /* 1. 画像を少し小さくして、左右に隙間を作る */
-  background-size: 90% auto; /* 横幅を90%に。残りの10%が余白になります */
-  
-  /* 2. 画像を中央に配置 */
-  background-position: center center;
-  
-  /* 3. 背景が繰り返されないようにする */
-  background-repeat: no-repeat;
-
-  /* 4. 余白（背景色）の色を決める */
-  background-color: #fdf5e6; /* お好みの背景色に変えてください */
-
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-}
-  .popup-box {
-  position: absolute;
-  top: 38%; /
-  left: 12%;
-  transform: none;
-  background-color: rgba(255, 255, 255, 0.95);
-  border: 2px solid #584439;
-  border-radius: 12px;
-  padding: 20px;
-  width: 60%;
-  max-width: 280px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  z-index: 1000;
-  display: none;
-  animation: fadeSlideUp 0.6s ease-out forwards;
-}
-
-.popup-content h3 {
-  margin-top: 0;
-  color: #584439;
-  font-size: 20px;
-}
-
-.popup-content ul {
-  padding-left: 20px;
-  text-align: left;
-  color: #333;
-  font-size: 14px;
-}
-
-.close-btn {
-  position: absolute;
-  top: 8px;
-  right: 12px;
-  font-size: 20px;
-  color: #584439;
-  cursor: pointer;
-}
-.autumn-text {
-  font-family: 'Playfair Display', serif;
-  font-size: 100px;
-  fill: none;
-  stroke: #584439;
-  stroke-width: 2;
-  stroke-dasharray: 872;
-  stroke-dashoffset: 872;
-  animation: drawText 3s ease-in-out forwards;
-}
-   .autumn-link {
-  font-family: 'Playfair Display', serif;
-  font-size: 36px;
-  color: #584439;
-  text-decoration: none;
-  margin: -5px 0;
-  display: block;
-  text-align: left;
-  padding-left: 12px;
-  opacity: 0;
-  animation: fadeSlideUp 1.8s ease-out forwards;
-  transition: color 0.3s ease;
-}
-
-    .link-group {
-  position: absolute;
-  top: 60%;         
-  left: 0;          
-  padding-left: 12px;
-}
-
-
-.autumn-link:hover {
-  color: #584439;
-}
-
-@keyframes drawText {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-@keyframes fillText {
-  to {
-    fill: currentColor;
-    stroke: none;
-  }
-}
-    @keyframes fadeSlideUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-    .button-group {
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      background-image: url('https://raw.githubusercontent.com/takaichinaenae/spring-camp/main/top_page.png');
+      background-size: 90% auto;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-color: #fdf5e6;
+      width: 100%;
+      height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 20px;
-      margin-top: 40px;
-      animation: fadeInUp 1.5s ease forwards 3s;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
     }
 
-    a.nav-button {
-      display: block;
-      background-color: #584439;
-      color: white;
+    .popup-box {
+      position: absolute;
+      top: 38%;
+      left: 12%;
+      background-color: rgba(255, 255, 255, 0.95);
+      border: 2px solid #584439;
+      border-radius: 12px;
+      padding: 20px;
+      width: 60%;
+      max-width: 280px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      z-index: 1000;
+      display: none;
+      animation: fadeSlideUp 0.6s ease-out forwards;
+    }
+
+    .popup-content h3 {
+      margin-top: 0;
+      color: #584439;
+      font-size: 20px;
+    }
+
+    .popup-content ul {
+      padding-left: 20px;
+      text-align: left;
+      color: #333;
+      font-size: 14px;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 8px;
+      right: 12px;
+      font-size: 20px;
+      color: #584439;
+      cursor: pointer;
+    }
+
+    .autumn-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 100px;
+      fill: none;
+      stroke: #584439;
+      stroke-width: 2;
+      stroke-dasharray: 872;
+      stroke-dashoffset: 872;
+      animation: drawText 3s ease-in-out forwards;
+    }
+
+    .autumn-link {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      color: #584439;
       text-decoration: none;
-      padding: 14px 24px;
-      font-size: 18px;
-      border-radius: 30px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-      width: 100%;
-      max-width: 300px;
-      text-align: center;
-      transition: background-color 0.3s ease;
+      margin: -5px 0;
+      display: block;
+      text-align: left;
+      padding-left: 12px;
+      opacity: 0;
+      animation: fadeSlideUp 1.8s ease-out forwards;
+      transition: color 0.3s ease;
     }
 
-    a.nav-button:hover {
-      background-color: #584439;
+    .link-group {
+      position: absolute;
+      top: 60%;
+      left: 0;
+      padding-left: 12px;
     }
 
-   
-  }
-}
+    .autumn-link:hover {
+      color: #584439;
+    }
+
+    @keyframes drawText { to { stroke-dashoffset: 0; } }
+    @keyframes fadeSlideUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
     @media screen and (min-width: 768px) {
-  .autumn-text.line1 {
-    transform: translateY(30px);
-  }
-  .autumn-text.line2 {
-    transform: translateY(30px);
-  }
-  .autumn-text.line3 {
-    transform: translateY(30px);
-  }
-}
+      .autumn-text.line1, .autumn-text.line2, .autumn-text.line3 {
+        transform: translateY(30px);
+      }
+    }
   </style>
 </head>
 <body>
-  
- <svg viewBox="0 0 700 600" width="100%" height="600">
-  <text x="50%" y="-15%" text-anchor="middle" dominant-baseline="middle"
-      class="autumn-text line1" fill="none" stroke="#FFFCBF">
-  Belle breeze
-</text>
-  <text x="50%" y="5%" text-anchor="middle" dominant-baseline="middle"
-      class="autumn-text line2" fill="none" stroke="#FFFCBF">
+  <svg viewBox="0 0 700 600" width="100%" height="600">
+    <text x="50%" y="-15%" text-anchor="middle" dominant-baseline="middle" class="autumn-text line1" stroke="#FFFCBF">Belle breeze</text>
+    <text x="50%" y="5%" text-anchor="middle" dominant-baseline="middle" class="autumn-text line2" stroke="#FFFCBF">Autumn Camp</text>
+    <text x="70%" y="20%" text-anchor="middle" dominant-baseline="middle" class="autumn-text line3" stroke="#FFFCBF">2025</text>
+  </svg>
 
-    Autumn Camp
-  </text>
-   <text x="70%" y="20%" text-anchor="middle" dominant-baseline="middle"
-      class="autumn-text line3" fill="none" stroke="#FFFCBF">
-  2025
-</text>
-
-</svg>
   <div class="link-group">
-  <a href="#" class="autumn-link" onclick="togglePopup()">Point</a>
-  <a href="schedule.html" class="autumn-link">Schedule</a>
-  <a href="items.html" class="autumn-link">Items</a>
-  <a href="team.html" class="autumn-link">Team</a>
-</div>
-  <script>
-  function togglePopup() {
-    const popup = document.getElementById('popup');
-    popup.style.display = (popup.style.display === 'block') ? 'none' : 'block';
-  }
-</script>
-  <script>
-  
-  setTimeout(() => {
-    const texts = document.querySelectorAll('.autumn-text');
-    texts.forEach(text => {
-      text.setAttribute('fill', '#FFFCBF');
-      text.setAttribute('stroke', 'none');
-    });
-  }, 3000);
-</script>
-  
-
-<div id="popup" class="popup-box">
-  <div class="popup-content">
-    <span class="close-btn" onclick="togglePopup()">×</span>
-    <h3>日程2月16(月)-18(水)</h3>
-    <ul>
-      <li>集合  12:20  <a href="https://maps.app.goo.gl/ZTLAAcRznQJfqenY9">JR茂原駅</a></li>
-      <li>解散予定 14:00 茂原駅 </li>
-  <li>宿:  <a href="https://maps.app.goo.gl/Xvydgh6JJjBj4CiH7">旅館竹の家</a></li>
-</li>
-      <li>
-  合宿費(富士急代除く)<br>
-  1泊2日:15,000円 2泊3日:25,000円<br>
-  当日現金回収
-</li>
-      <li>1日目のお昼は支給されないので各自持ってきてください！</li>
-      
-      
-      
-    </ul>
+    <a href="#" class="autumn-link" onclick="togglePopup()">Point</a>
+    <a href="schedule.html" class="autumn-link">Schedule</a>
+    <a href="items.html" class="autumn-link">Items</a>
+    <a href="team.html" class="autumn-link">Team</a>
   </div>
-</div>
-  
 
+  <div id="popup" class="popup-box">
+    <div class="popup-content">
+      <span class="close-btn" onclick="togglePopup()">×</span>
+      <h3>日程2月16(月)-18(水)</h3>
+      <ul>
+        <li>集合 12:20 <a href="#">JR茂原駅</a></li>
+        <li>解散予定 14:00 茂原駅</li>
+        <li>宿: <a href="#">旅館竹の家</a></li>
+        <li>合宿費: 1泊15,000円 / 2泊25,000円</li>
+        <li>1日目のお昼は各自持参！</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    function togglePopup() {
+      const popup = document.getElementById('popup');
+      popup.style.display = (popup.style.display === 'block') ? 'none' : 'block';
+    }
+    setTimeout(() => {
+      document.querySelectorAll('.autumn-text').forEach(text => {
+        text.setAttribute('fill', '#FFFCBF');
+        text.setAttribute('stroke', 'none');
+      });
+    }, 3000);
+  </script>
 </body>
 </html>
