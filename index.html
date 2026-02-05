@@ -6,17 +6,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
   <style>
-    body {
+    /* デザインの土台 */
+    html, body {
       margin: 0;
       padding: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    body {
       font-family: 'M PLUS Rounded 1c', sans-serif;
-      background-image: url('https://picsum.photos/1000/1500');
+      /* 背景設定：左右に少し余白（90%）を作り、中央に配置 */
+      background-color: #fdf5e6;
+      background-image: url('https://raw.githubusercontent.com/takaichinaenae/spring-camp/main/top_page.png');
       background-size: 90% auto;
       background-position: center center;
       background-repeat: no-repeat;
-      background-color: #fdf5e6;
-      width: 100%;
-      height: 100vh;
+      
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -25,47 +31,10 @@
       overflow: hidden;
     }
 
-    .popup-box {
-      position: absolute;
-      top: 38%;
-      left: 12%;
-      background-color: rgba(255, 255, 255, 0.95);
-      border: 2px solid #584439;
-      border-radius: 12px;
-      padding: 20px;
-      width: 60%;
-      max-width: 280px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      z-index: 1000;
-      display: none;
-      animation: fadeSlideUp 0.6s ease-out forwards;
-    }
-
-    .popup-content h3 {
-      margin-top: 0;
-      color: #584439;
-      font-size: 20px;
-    }
-
-    .popup-content ul {
-      padding-left: 20px;
-      text-align: left;
-      color: #333;
-      font-size: 14px;
-    }
-
-    .close-btn {
-      position: absolute;
-      top: 8px;
-      right: 12px;
-      font-size: 20px;
-      color: #584439;
-      cursor: pointer;
-    }
-
+    /* SVGテキストの設定 */
     .autumn-text {
       font-family: 'Playfair Display', serif;
-      font-size: 100px;
+      font-size: 80px; /* 少し小さめに調整 */
       fill: none;
       stroke: #584439;
       stroke-width: 2;
@@ -74,49 +43,56 @@
       animation: drawText 3s ease-in-out forwards;
     }
 
-    .autumn-link {
-      font-family: 'Playfair Display', serif;
-      font-size: 36px;
-      color: #584439;
-      text-decoration: none;
-      margin: -5px 0;
-      display: block;
-      text-align: left;
-      padding-left: 12px;
-      opacity: 0;
-      animation: fadeSlideUp 1.8s ease-out forwards;
-      transition: color 0.3s ease;
+    @keyframes drawText {
+      to { stroke-dashoffset: 0; }
     }
 
+    /* リンクボタンの設定 */
     .link-group {
       position: absolute;
-      top: 60%;
-      left: 0;
-      padding-left: 12px;
+      top: 65%;
+      left: 20px;
     }
 
-    .autumn-link:hover {
+    .autumn-link {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
       color: #584439;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 10px;
+      opacity: 0;
+      animation: fadeSlideUp 1.5s ease-out forwards 1s;
     }
 
-    @keyframes drawText { to { stroke-dashoffset: 0; } }
     @keyframes fadeSlideUp {
-      0% { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    @media screen and (min-width: 768px) {
-      .autumn-text.line1, .autumn-text.line2, .autumn-text.line3 {
-        transform: translateY(30px);
-      }
+    /* ポップアップの設定 */
+    .popup-box {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      border: 2px solid #584439;
+      border-radius: 12px;
+      padding: 20px;
+      width: 80%;
+      max-width: 300px;
+      display: none;
+      z-index: 2000;
     }
   </style>
 </head>
 <body>
-  <svg viewBox="0 0 700 600" width="100%" height="600">
-    <text x="50%" y="-15%" text-anchor="middle" dominant-baseline="middle" class="autumn-text line1" stroke="#FFFCBF">Belle breeze</text>
-    <text x="50%" y="5%" text-anchor="middle" dominant-baseline="middle" class="autumn-text line2" stroke="#FFFCBF">Autumn Camp</text>
-    <text x="70%" y="20%" text-anchor="middle" dominant-baseline="middle" class="autumn-text line3" stroke="#FFFCBF">2025</text>
+
+  <svg viewBox="0 0 700 600" width="100%" height="auto">
+    <text x="50%" y="20%" text-anchor="middle" class="autumn-text">Belle breeze</text>
+    <text x="50%" y="40%" text-anchor="middle" class="autumn-text">Autumn Camp</text>
+    <text x="50%" y="60%" text-anchor="middle" class="autumn-text">2025</text>
   </svg>
 
   <div class="link-group">
@@ -127,28 +103,21 @@
   </div>
 
   <div id="popup" class="popup-box">
-    <div class="popup-content">
-      <span class="close-btn" onclick="togglePopup()">×</span>
-      <h3>日程2月16(月)-18(水)</h3>
-      <ul>
-        <li>集合 12:20 <a href="#">JR茂原駅</a></li>
-        <li>解散予定 14:00 茂原駅</li>
-        <li>宿: <a href="#">旅館竹の家</a></li>
-        <li>合宿費: 1泊15,000円 / 2泊25,000円</li>
-        <li>1日目のお昼は各自持参！</li>
-      </ul>
-    </div>
+    <h3>キャンプ詳細</h3>
+    <p>日程：2月16日〜18日</p>
+    <button onclick="togglePopup()">閉じる</button>
   </div>
 
   <script>
     function togglePopup() {
-      const popup = document.getElementById('popup');
-      popup.style.display = (popup.style.display === 'block') ? 'none' : 'block';
+      const p = document.getElementById('popup');
+      p.style.display = (p.style.display === 'block') ? 'none' : 'block';
     }
+    // 3秒後に文字を塗りつぶす
     setTimeout(() => {
-      document.querySelectorAll('.autumn-text').forEach(text => {
-        text.setAttribute('fill', '#FFFCBF');
-        text.setAttribute('stroke', 'none');
+      document.querySelectorAll('.autumn-text').forEach(t => {
+        t.setAttribute('fill', '#FFFCBF');
+        t.setAttribute('stroke', 'none');
       });
     }, 3000);
   </script>
