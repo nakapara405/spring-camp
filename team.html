@@ -2,125 +2,159 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>Teams - Spring Camp 2025</title>
+  <title>Team List - Spring Camp 2025</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      padding: 30px 15px;
+      padding: 20px;
       background-color: #ffffff;
       font-family: 'M PLUS Rounded 1c', sans-serif;
       color: #584439;
     }
 
-    /* タイトル：表紙のデザインを継承 */
+    /* タイトル：表紙のフォントとラインを継承 */
     .page-title {
       font-family: 'Playfair Display', serif;
-      font-size: 36px;
+      font-size: 40px;
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 30px;
       position: relative;
+      display: inline-block;
+      left: 50%;
+      transform: translateX(-50%);
     }
+
     .page-title::after {
       content: '';
       position: absolute;
-      left: 50%;
-      bottom: -10px;
-      transform: translateX(-50%);
-      width: 60px;
+      left: 0;
+      bottom: 0;
+      width: 100%;
       height: 2px;
-      background-color: #584439;
+      background-color: #584439; /* ここは視認性のためブラウンに */
     }
 
-    /* チームの枠組み */
-    .team-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 25px;
-      max-width: 400px;
-      margin: 0 auto;
+    /* チームごとのコンテナ */
+    .team-container {
+      max-width: 500px;
+      margin: 0 auto 40px auto;
     }
 
-    .team-card {
-      border: 1.5px solid #584439;
-      border-radius: 12px;
-      overflow: hidden;
-      background: #fff;
-    }
-
-    .team-header {
-      background-color: #FFFCBF; /* 表紙のアクセントカラー */
-      padding: 10px;
-      text-align: center;
+    .team-name {
       font-family: 'Playfair Display', serif;
-      font-size: 20px;
-      font-weight: bold;
-      border-bottom: 1.5px solid #584439;
+      font-size: 24px;
+      background-color: #FFFCBF; /* 表紙の塗りつぶし色 */
+      padding: 5px 15px;
+      display: inline-block;
+      border-radius: 5px 5px 0 0;
+      border: 1px solid #584439;
+      border-bottom: none;
     }
 
+    /* テーブルスタイル */
     table {
       width: 100%;
       border-collapse: collapse;
+      border: 1px solid #584439;
+      background-color: white;
     }
 
-    td {
-      padding: 12px 15px;
-      border-bottom: 1px solid #eee;
+    th, td {
+      border: 1px solid #e0dcd9;
+      padding: 12px;
+      text-align: center;
     }
-    tr:last-child td { border-bottom: none; }
 
-    /* 学年表示 */
-    .grade {
-      width: 45px;
+    th {
+      background-color: #fcfaf8;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    /* 学年ごとのラベル色分け（一目でわかるように） */
+    .grade-label {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 12px;
       font-size: 12px;
       font-weight: bold;
-      color: #888;
+      color: #fff;
     }
+    .grade-1 { background-color: #a8dadc; } /* 1年生：水色 */
+    .grade-2 { background-color: #457b9d; } /* 2年生：青 */
+    .grade-3 { background-color: #e9c46a; } /* 3年生：黄 */
+    .grade-4 { background-color: #e76f51; } /* 4年生：オレンジ */
 
-    /* 名前表示 */
-    .name {
-      font-size: 16px;
-      letter-spacing: 0.05em;
-    }
-
-    .back-link {
+    .back-btn {
       display: block;
-      text-align: center;
-      margin-top: 50px;
-      color: #584439;
+      width: fit-content;
+      margin: 20px auto;
       text-decoration: none;
+      color: #584439;
       font-family: 'Playfair Display', serif;
-      font-size: 18px;
+      border: 1px solid #584439;
+      padding: 10px 20px;
+      border-radius: 20px;
     }
   </style>
 </head>
 <body>
 
-  <h1 class="page-title">Teams</h1>
+  <h1 class="page-title">Team List</h1>
 
-  <div class="team-grid">
-    <div class="team-card">
-      <div class="team-header">Team A</div>
-      <table>
-        <tr><td class="grade">3年</td><td class="name">名前 太郎</td></tr>
-        <tr><td class="grade">2年</td><td class="name">名前 次郎</td></tr>
-        <tr><td class="grade">1年</td><td class="name">名前 三郎</td></tr>
-      </table>
-    </div>
+  <div class="team-container">
+    <div class="team-name">Team A</div>
+    <table>
+      <thead>
+        <tr>
+          <th>学年</th>
+          <th>名前</th>
+          <th>役職・備考</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="grade-label grade-3">3年</span></td>
+          <td>田中 太郎</td>
+          <td>班長</td>
+        </tr>
+        <tr>
+          <td><span class="grade-label grade-1">1年</span></td>
+          <td>佐藤 花子</td>
+          <td></td>
+        </tr>
+        </tbody>
+    </table>
+  </div>
 
-    <div class="team-card">
-      <div class="team-header">Team B</div>
-      <table>
-        <tr><td class="grade">3年</td><td class="name">名前 花子</td></tr>
-        <tr><td class="grade">2年</td><td class="name">名前 和子</td></tr>
-        <tr><td class="grade">1年</td><td class="name">名前 洋子</td></tr>
-      </table>
-    </div>
-    
-    </div>
+  <div class="team-container">
+    <div class="team-name">Team B</div>
+    <table>
+      <thead>
+        <tr>
+          <th>学年</th>
+          <th>名前</th>
+          <th>役職・備考</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="grade-label grade-2">2年</span></td>
+          <td>鈴木 一郎</td>
+          <td>班長</td>
+        </tr>
+        <tr>
+          <td><span class="grade-label grade-1">1年</span></td>
+          <td>高橋 健太</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
-  <a href="index.html" class="back-link">← Back to Top</a>
+  <a href="index.html" class="back-btn">← Back to Top</a>
 
 </body>
 </html>
