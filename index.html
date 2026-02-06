@@ -71,22 +71,54 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* ポップアップの設定 */
-    .popup-box {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: white;
-      border: 1.5px solid #584439;
-      border-radius: 10px;
-      padding: 10px;
-      width: 72%;
-      max-width: 250px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      display: none;
-      z-index: 2000;
-    }
+     .popup-box {
+  position: absolute;
+  top: 38%; /
+  left: 12%;
+  transform: none;
+  background-color: rgba(255, 255, 255, 0.95);
+  border: 2px solid #ff9999;
+  border-radius: 12px;
+  padding: 20px;
+  width: 60%;
+  max-width: 280px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  z-index: 1000;
+  display: none;
+  animation: fadeSlideUp 0.6s ease-out forwards;
+}
+
+.popup-content h3 {
+  margin-top: 0;
+  color: #584439;
+  font-size: 20px;
+}
+
+.popup-content ul {
+  padding-left: 20px;
+  text-align: left;
+  color: #333;
+  font-size: 14px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 20px;
+  color: #584439;
+  cursor: pointer;
+}
+.autumn-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 100px;
+  fill: none;
+  stroke: #ff9999;
+  stroke-width: 2;
+  stroke-dasharray: 872;
+  stroke-dashoffset: 872;
+  animation: drawText 3s ease-in-out forwards;
+}
     .main-title-svg {
   position: absolute;
   top: -5%; /* ここを 0% に近づけるほど上に上がります */
