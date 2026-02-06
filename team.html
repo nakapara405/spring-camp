@@ -2,185 +2,159 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>メンバー表</title>
+  <title>Team List - Spring Camp 2025</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
-      background-color: #F9EFE6;
-      font-family: 'M PLUS Rounded 1c', sans-serif;
       margin: 0;
       padding: 20px;
+      background-color: #ffffff;
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      color: #584439;
+    }
+
+    /* タイトル：表紙のフォントとラインを継承 */
+    .page-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 40px;
+      text-align: center;
+      margin-bottom: 30px;
+      position: relative;
+      display: inline-block;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .page-title::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #584439; /* ここは視認性のためブラウンに */
+    }
+
+    /* チームごとのコンテナ */
+    .team-container {
+      max-width: 500px;
+      margin: 0 auto 40px auto;
+    }
+
+    .team-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      background-color: #FFFCBF; /* 表紙の塗りつぶし色 */
+      padding: 5px 15px;
+      display: inline-block;
+      border-radius: 5px 5px 0 0;
+      border: 1px solid #584439;
+      border-bottom: none;
+    }
+
+    /* テーブルスタイル */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid #584439;
+      background-color: white;
+    }
+
+    th, td {
+      border: 1px solid #e0dcd9;
+      padding: 12px;
       text-align: center;
     }
 
-    h1 {
-      font-size: 48px;
-      color: #ED5959;
-      margin-bottom: 20px;
+    th {
+      background-color: #fcfaf8;
+      font-weight: bold;
+      font-size: 14px;
     }
 
-    .button-group {
-      margin-bottom: 30px;
-    }
-
-    .toggle-btn {
-      background-color: #453B3A;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      margin: 0 10px;
-      font-size: 16px;
-      border-radius: 20px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    .toggle-btn:hover {
-      background-color: #453B3A;
-    }
-
-    .member-section {
-      display: none;
-      max-width: 900px;
-      margin: 0 auto;
-      background-color: #fff;
+    /* 学年ごとのラベル色分け（一目でわかるように） */
+    .grade-label {
+      display: inline-block;
+      padding: 2px 8px;
       border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      font-size: 12px;
+      font-weight: bold;
+      color: #fff;
     }
+    .grade-1 { background-color: #a8dadc; } /* 1年生：水色 */
+    .grade-2 { background-color: #457b9d; } /* 2年生：青 */
+    .grade-3 { background-color: #e9c46a; } /* 3年生：黄 */
+    .grade-4 { background-color: #e76f51; } /* 4年生：オレンジ */
 
-    .member-section.active {
+    .back-btn {
       display: block;
+      width: fit-content;
+      margin: 20px auto;
+      text-decoration: none;
+      color: #584439;
+      font-family: 'Playfair Display', serif;
+      border: 1px solid #584439;
+      padding: 10px 20px;
+      border-radius: 20px;
     }
-
-.team-row {
-  display: flex;
-  justify-content: space-between;
-  gap: 8px;              
-  flex-wrap: nowrap;     
-}
-
-.team-column {
-  width: 48%;            
-  text-align: left;
-}
-    .team-title {
-      font-size: 20px;
-      color: #453B3A;
-      margin-bottom: 10px;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-      margin-bottom: 20px;
-    }
-
-    li {
-      font-size: 16px;
-      color: #333;
-      margin: 4px 0;
-    }
-   .title {
-  font-family: 'Playfair Display', serif;
-  font-size: 64px;
-  color: #ED5959;
-  text-align: center;
-  margin: 40px 0 20px;
-  opacity: 0;
-  animation: fadeInUp 1.8s ease-out forwards;
-}
-    @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
   </style>
 </head>
 <body>
 
-  <h1 class="title">Team</h1>
+  <h1 class="page-title">Team List</h1>
 
-  <div class="button-group">
-    <button class="toggle-btn" onclick="showSection('tennis')">テニス</button>
-    <button class="toggle-btn" onclick="showSection('amusement')">富士急</button>
+  <div class="team-container">
+    <div class="team-name">Team A</div>
+    <table>
+      <thead>
+        <tr>
+          <th>学年</th>
+          <th>名前</th>
+          <th>役職・備考</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="grade-label grade-3">3年</span></td>
+          <td>田中 太郎</td>
+          <td>班長</td>
+        </tr>
+        <tr>
+          <td><span class="grade-label grade-1">1年</span></td>
+          <td>佐藤 花子</td>
+          <td></td>
+        </tr>
+        </tbody>
+    </table>
   </div>
 
-  <!-- テニスチーム -->
-  <div id="tennis" class="member-section active">
-    <div class="team-row">
-      <div class="team-column">
-        <div class="team-title">チームT</div>
-        <ul>
-          <li>たく</li>
-          <li>神内</li>
-          <li>ゆうた</li>
-          <li>さなみ</li>
-          <li>ゆう</li>
-          <li>なお</li>
-          <li>はらりく</li>
-          <li>そら</li>
-        </ul>
-      </div>
-      <div class="team-column">
-        <div class="team-title">チームD</div>
-        <ul>
-          <li>大介</li>
-          <li>いつき</li>
-          <li>まい</li>
-          <li>はるな</li>
-          <li>かな</li>
-          <li>ひいろ</li>
-          <li>たける</li>
-          <li>しゅうた</li>
-        </ul>
-      </div>
-    </div>
+  <div class="team-container">
+    <div class="team-name">Team B</div>
+    <table>
+      <thead>
+        <tr>
+          <th>学年</th>
+          <th>名前</th>
+          <th>役職・備考</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="grade-label grade-2">2年</span></td>
+          <td>鈴木 一郎</td>
+          <td>班長</td>
+        </tr>
+        <tr>
+          <td><span class="grade-label grade-1">1年</span></td>
+          <td>高橋 健太</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
-  <!-- 遊園地チーム -->
-  <div id="amusement" class="member-section">
-    <div class="team-row">
-      <div class="team-column">
-        <div class="team-title">乗る</div>
-        <ul>
-          <li>かな</li>
-          <li>ゆう</li>
-          <li>さなみ</li>
-          <li>たける</li>
-          <li>しゅうた</li>
-        </ul>
-      </div>
-      <div class="team-column">
-        <div class="team-title">そこそこ</div>
-        <ul>
-          <li>まい</li>
-          <li>はるな</li>
-          <li>ひいろ</li>
-          <li>なお</li>
-          <li>はらりく</li>
-          <li>そら</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    function showSection(id) {
-      document.querySelectorAll('.member-section').forEach(section => {
-        section.classList.remove('active');
-      });
-      document.getElementById(id).classList.add('active');
-    }
-  </script>
+  <a href="index.html" class="back-btn">← Back to Top</a>
 
 </body>
 </html>
-
