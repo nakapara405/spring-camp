@@ -65,30 +65,33 @@
       opacity: 0;
       animation: fadeSlideUp 1.5s ease-out forwards 0.5s;
     }
-    /* 白いラインの本体 */
+    /* 通常のライン（Schedule用）：100%まで伸びる */
     .autumn-link::after {
       content: '';
       position: absolute;
       left: 0;
-      bottom: -4px;      /* 文字からの距離 */
-      width: 0;           /* 初期状態は幅ゼロ */
-      height: 1.5px;      /* ラインの太さ */
-      background-color: #ffffff; /* 白いライン */
-      
-      /* 文字の出現（0.3s）に合わせてラインを伸ばすアニメーション */
-      animation: drawLine 1.2s ease-out forwards 0.8s; 
+      bottom: -4px;
+      width: 0;
+      height: 1.5px;
+      background-color: #ffffff;
+      animation: drawLineFull 1.2s ease-out forwards 0.8s;
     }
 
-    /* ラインが左から右へ伸びるアニメーション */
-    @keyframes drawLine {
+    /* 短いライン（short-line用）：3分の2で止まるように上書き */
+    .autumn-link.short-line::after {
+      animation: drawLineShort 1.2s ease-out forwards 0.8s;
+    }
+
+    /* 全開まで伸びるアニメーション */
+    @keyframes drawLineFull {
       from { width: 0; }
       to { width: 100%; }
     }
-    
 
-    @keyframes fadeSlideUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    /* 3分の2で止まるアニメーション */
+    @keyframes drawLineShort {
+      from { width: 0; }
+      to { width: 66%; }
     }
 
      .popup-box {
@@ -143,6 +146,13 @@
   <text x="50%" y="28%" text-anchor="middle" class="autumn-text">Spring</text>
   <text x="50%" y="48%" text-anchor="middle" class="autumn-text">Camp</text>
 </svg>
+
+  <div class="link-group">
+    <a href="#" class="autumn-link short-line" onclick="togglePopup()">Point</a>
+    <a href="schedule.html" class="autumn-link">Schedule</a>
+    <a href="items.html" class="autumn-link short-line">Items</a>
+    <a href="team.html" class="autumn-link short-line">Team</a>
+  </div>
 
   <div class="link-group">
     <a href="#" class="autumn-link" onclick="togglePopup()">Point</a>
