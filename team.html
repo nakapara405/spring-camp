@@ -22,6 +22,33 @@
       position: relative;
     }
 
+    opacity: 0;
+      animation: fadeSlideUp 1.5s ease-out forwards;
+    }
+
+    .page-title::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: -8px;
+      transform: translateX(-50%);
+      width: 60px; /* ラインの長さ */
+      height: 1.5px;
+      background-color: #584439;
+    }
+
+    /* ★ここを追加：アニメーションの定義 */
+    @keyframes fadeSlideUp {
+      from { 
+        opacity: 0; 
+        transform: translateY(20px); 
+      }
+      to { 
+        opacity: 1; 
+        transform: translateY(0); 
+      }
+    }
+
     /* エクセル風のコンパクトなテーブル */
     .member-table {
       width: 100%;
