@@ -60,7 +60,8 @@
       font-size: 32px;
       color: #584439;
       text-decoration: none;
-      display: block;
+      display: inline-block;
+      position: relative;
       margin-bottom: 10px;
       opacity: 0;
       animation: fadeSlideUp 1.5s ease-out forwards 0.5s;
@@ -87,15 +88,14 @@
     }
 
     
-    @keyframes drawLineFull {
+   @keyframes drawLineFull {
       from { width: 0; }
-      to { width: 100%; }
+      to { width: calc(100% - 0.8em); } /* 全体から・の分を引いた長さ */
     }
-
     
-    @keyframes drawLineShort {
+   @keyframes drawLineShort {
       from { width: 0; }
-      to { width: 66%; }
+      to { width: calc(66% - 0.8em); } /* 3分の2から・の分を引いた長さ */
     }
 
      .popup-box {
