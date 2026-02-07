@@ -47,7 +47,7 @@
       to { stroke-dashoffset: 0; }
     }
 
-    /* リンクボタンの設定 */
+    
     .link-group {
       position: absolute;
       top: 25%;
@@ -69,7 +69,7 @@
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
   }
-    /* 通常のライン（Schedule用）：100%まで伸びる */
+    
     .autumn-link::after {
       content: '';
       position: absolute;
@@ -81,18 +81,18 @@
       animation: drawLineFull 1.2s ease-out forwards 0.8s;
     }
 
-    /* 短いライン（short-line用）：3分の2で止まるように上書き */
+    
     .autumn-link.short-line::after {
       animation: drawLineShort 1.2s ease-out forwards 0.8s;
     }
 
-    /* 全開まで伸びるアニメーション */
+    
     @keyframes drawLineFull {
       from { width: 0; }
       to { width: 100%; }
     }
 
-    /* 3分の2で止まるアニメーション */
+    
     @keyframes drawLineShort {
       from { width: 0; }
       to { width: 66%; }
@@ -139,7 +139,7 @@
 
     .main-title-svg {
   position: absolute;
-  top: -5%; /* ここを 0% に近づけるほど上に上がります */
+  top: -5%; 
   z-index: 10;
 }
   </style>
@@ -147,7 +147,7 @@
 <body>
 
  <svg viewBox="0 0 700 600" width="100%" height="auto" class="main-title-svg">
-  <text x="50%" y="28%" text-anchor="middle" class="autumn-text">Spring</text>
+  <text x="45%" y="28%" text-anchor="middle" class="autumn-text">Spring</text>
   <text x="50%" y="48%" text-anchor="middle" class="autumn-text">Camp</text>
 </svg>
 
