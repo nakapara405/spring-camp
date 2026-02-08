@@ -125,18 +125,17 @@
   border-radius: 12px;
   padding: 12px 10px 15px; 
   
-  /* 幅の設定：画面からはみ出さないよう調整 */
-  width: 85%; /* スマホ画面の85%を使い切る */
-  max-width: 220px; /* それ以上は広がらないように制限 */
+ 
+  width: 85%; 
+  max-width: 220px; 
   
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   z-index: 1000;
   display: none;
-  /* アニメーションも中央寄せを維持するように微調整 */
   animation: fadeSlideCenter 0.6s ease-out forwards;
 }
 
-/* アニメーション用の中央寄せ設定 */
+
 @keyframes fadeSlideCenter {
   from { 
     opacity: 0; 
