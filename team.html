@@ -1,195 +1,160 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <title>Team List - Spring Camp 2025</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      padding: 0px 10px 20px;
-      background-color: #F9EFE6;
-      font-family: 'M PLUS Rounded 1c', sans-serif;
-      color: #584439;
-    }
+  <meta charset="UTF-8">
+  <title>Team List - Spring Camp 2025</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0px 10px 20px;
+      background-color: #F9EFE6;
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      color: #584439;
+    }
 
-    .page-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 60px;
-      text-align: center;
-      margin: 0 0 10px; 
-      padding-top: 10px;
-      position: relative;
-      opacity: 0;
-      animation: fadeSlideUp 1.5s ease-out forwards;
-    }
+    .page-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 60px;
+      text-align: center;
+      margin: 0 0 10px; 
+      padding-top: 10px;
+      position: relative;
+      opacity: 0;
+      animation: fadeSlideUp 1.5s ease-out forwards;
+    }
 
-    
-    
-    @keyframes fadeSlideUp {
-      from { 
-        opacity: 0; 
-        transform: translateY(20px); 
-      }
-      to { 
-        opacity: 1; 
-        transform: translateY(0); 
-      }
-    }
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-    /* エクセル風のコンパクトなテーブル */
-    .member-table {
-      width: 100%;
-      border-collapse: collapse;
-      border: 1.5px solid #584439;
-      table-layout: fixed; /* 列の幅を固定 */
-      background-color: #ffffff;
-      
-    }
+    .member-table {
+      width: 100%;
+      border-collapse: collapse; /* 枠線を出すためにcollapseに戻しました */
+      border: 1.5px solid #584439;
+      table-layout: fixed;
+      background-color: #ffffff;
+    }
 
-    .member-table th, .member-table td {
-      border: 1px solid #584439;
-      padding: 10px 2px;
-      text-align: center;
-      font-size: 14px;
-      word-break: break-all;
-    }
+    .member-table th, .member-table td {
+      border: 1px solid #584439;
+      padding: 10px 2px;
+      text-align: center;
+      font-size: 14px;
+      word-break: break-all;
+    }
 
-    /* ヘッダー（A, B, C） */
-    .header-row {
-      background-color: #fae06a;
-    }
-    .col-label {
-      font-family: 'Playfair Display', serif;
-      font-weight: bold;
-      color: #584439;
-    }
+    .header-row {
+      background-color: #fae06a;
+    }
+    .col-label {
+      font-family: 'Playfair Display', serif;
+      font-weight: bold;
+      color: #584439;
+    }
 
-    /* 左端の学年カラム */
-    .grade-col {
-      background-color:#f6b7aa !important;
-      font-weight: bold;
-      width: 50px;
-    }
+    .grade-col {
+      background-color:#f6b7aa !important;
+      font-weight: bold;
+      width: 50px;
+    }
 
-    /* 学年ごとの区切り（1年、2年など） */
-    .grade-header {
-      background-color: #eee;
-      font-weight: bold;
-      text-align: left;
-      padding-left: 10px;
-    }
-
-    .back-btn {
-      display: block;
-      width: fit-content;
-      margin: 30px auto;
-      text-decoration: none;
-      color: #584439;
-      font-family: 'Playfair Display', serif;
-      border: 1px solid #584439;
-      padding: 8px 16px;
-      border-radius: 20px;
-      font-size: 14px;
-    }
-   
-    
-  .no-member {
-   background: linear-gradient(to top left, 
-    transparent 49.5%, 
-    #584439 49.5%, 
-    #584439 50.5%, 
-    transparent 50.5%
-  ) no-repeat center/100% 100%;
-}
-  </style>
+    .no-member {
+      background: linear-gradient(to top left, 
+        transparent 49.5%, 
+        #584439 49.5%, 
+        #584439 50.5%, 
+        transparent 50.5%
+      ) no-repeat center/100% 100%;
+    }
+  </style>
 </head>
 <body>
 
-  <h1 class="page-title">Team</h1>
+  <h1 class="page-title">Team</h1>
 
-  <table class="member-table">
-    <thead>
-      <tr class="header-row">
-        <th style="width: 15%;">学年</th>
-        <th class="col-label">A</th>
-        <th class="col-label">B</th>
-        <th class="col-label">C</th>
-        <th class="col-label">D</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td rowspan="2" class="grade-col">4年</td>
-        <td>ともき</td>
-        <td>もりりん</td>
-        <td>雄大</td>
-        <td>こーへー</td>
-      </tr>
-      <tr>
-        <td>すず</td>
-        <td>たまき</td>
-        <td>りゅうせい</td>
-        <td>もえ</td>
-      </tr>
+  <table class="member-table">
+    <thead>
+      <tr class="header-row">
+        <th style="width: 15%;">学年</th>
+        <th class="col-label">A</th>
+        <th class="col-label">B</th>
+        <th class="col-label">C</th>
+        <th class="col-label">D</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td rowspan="2" class="grade-col">4年</td>
+        <td>ともき</td>
+        <td>もりりん</td>
+        <td>雄大</td>
+        <td>こーへー</td>
+      </tr>
+      <tr>
+        <td>すず</td>
+        <td>たまき</td>
+        <td>りゅうせい</td>
+        <td>もえ</td>
+      </tr>
 
-      <tr>
-        <td rowspan="2" class="grade-col">3年</td>
-        <td>大介</td>
-        <td>いつき</td>
-        <td>神内</td>
-        <td>ゆうた</td>
-      </tr>
-      <tr>
-        <td>とおる</td>
-        <td class="no-member"></td>
-        <td>たく</td>
-        <td class="no-member"></td>
-      </tr>
+      <tr>
+        <td rowspan="2" class="grade-col">3年</td>
+        <td>大介</td>
+        <td>いつき</td>
+        <td>神内</td>
+        <td>ゆうた</td>
+      </tr>
+      <tr>
+        <td>とおる</td>
+        <td class="no-member"></td>
+        <td>たく</td>
+        <td class="no-member"></td>
+      </tr>
 
-      <tr>
-        <td rowspan="2" class="grade-col">2年</td>
-        <td>ゆう</td>
-        <td>まい</td>
-        <td>はるな</td>
-        <td>さなみ</td>
-      </tr>
-      <tr>
-        <td class="no-member"></td>
-        <td class="no-member"></td>
-        <td>かな</td>
-        <td class="no-member"></td>
-        
-      </tr>
+      <tr>
+        <td rowspan="2" class="grade-col">2年</td>
+        <td>ゆう</td>
+        <td>まい</td>
+        <td>はるな</td>
+        <td>さなみ</td>
+      </tr>
+      <tr>
+        <td class="no-member"></td>
+        <td class="no-member"></td>
+        <td>かな</td>
+        <td class="no-member"></td>
+      </tr>
 
-      <tr>
-        <td rowspan="5" class="grade-col">1年</td>
-        <td>りょう</td>
-        <td>はらりく</td>
-        <td>みさき</td>
-        <td>そら</td>
-      </tr>
-      <tr>
-         <td>すぎみん</td>
-        <td>かなと</td>
-        <td>しゅうた</td>
-        <td>はづき</td>
-      </tr>
-      <tr>
-       <td>ゆうか</td>
-        <td>かえで</td>
-        <td>ひいろ</td>
-        <td>たける</td> 
-      </tr>
-      <tr>
-        <td>なお</td>
-        <td>はるか</td>
-        <td class="no-member"></td>
-        <td>みお</td>
-       </tr>
-      </tbody>
-  </table>
+      <tr>
+        <td rowspan="4" class="grade-col">1年</td>
+        <td>りょう</td>
+        <td>はらりく</td>
+        <td>みさき</td>
+        <td>そら</td>
+      </tr>
+      <tr>
+        <td>すぎみん</td>
+        <td>かなと</td>
+        <td>しゅうた</td>
+        <td>はづき</td>
+      </tr>
+      <tr>
+        <td>ゆうか</td>
+        <td>かえで</td>
+        <td>ひいろ</td>
+        <td>たける</td> 
+      </tr>
+      <tr>
+        <td>なお</td>
+        <td>はるか</td>
+        <td class="no-member"></td>
+        <td>みお</td>
+      </tr>
+    </tbody>
+  </table>
 
 </body>
-</html>　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+</html>
