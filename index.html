@@ -68,28 +68,28 @@
       margin-bottom: 10px;
       opacity: 0;
       animation: fadeSlideUp 1.5s ease-out forwards 0.5s;
-      padding-left: 0.7em;
+      padding-left: 0.4em;
     }
     @keyframes fadeSlideUp {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
   }
-    .autumn-link::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 55%; /* 文字の高さに合わせて調整 */
-  transform: translateY(-50%);
-  width: 6px;  /* 丸の大きさ（小さめに設定） */
-  height: 6px;
-  background-color: #584439;
-  border-radius: 50%; /* 正円にする */
-}
+   .autumn-link::before {
+     content: '';
+     position: absolute;
+     left: 0.15em;
+     top: 55%; /* 文字の高さに合わせて調整 */
+     transform: translateY(-50%);
+     width: 6px;  /* 丸の大きさ（小さめに設定） */
+     height: 6px;
+     background-color: #584439;
+     border-radius: 50%; /* 正円にする */
+   }
     
     .autumn-link::after {
       content: '';
       position: absolute;
-      left: 0.7em;
+      left: 0.4em;
       bottom: -4px;
       width: 0;
       height: 1.5px;
@@ -105,12 +105,12 @@
     
    @keyframes drawLineFull {
       from { width: 0; }
-      to { width: calc(100% - 0.7em); } /* 全体から・の分を引いた長さ */
+      to { width: calc(100% - 0.4em); } /* 全体から・の分を引いた長さ */
     }
     
    @keyframes drawLineShort {
       from { width: 0; }
-      to { width: calc(95% - 0.7em); } /* 3分の2から・の分を引いた長さ */
+      to { width: calc(95% - 0.4em); } /* 3分の2から・の分を引いた長さ */
     }
 
 .popup-box {
