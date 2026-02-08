@@ -166,7 +166,10 @@
     <span class="close-btn" onclick="togglePopup()">×</span>
     <h3>日程2月16(月)-18(水)</h3>
     <ul>
-      <li>集合  11:45  <a href="https://share.google/vGSHd5g2hveg88jqK">JR茂原駅</a></li>
+      <li>
+  集合 電車組 11:40 <a href="https://share.google/vGSHd5g2hveg88jqK">JR茂原駅</a><br>
+  <span style="display: inline-block; margin-left: 2.3em;">車組 12:30</span>
+</li>
       <li>解散予定 14:00 JR茂原駅 </li>
   <li>宿:  <a href="https://maps.app.goo.gl/9Ayc7qZwVWNsiQqN6">旅館竹の家</a></li>
 </li>
@@ -188,7 +191,7 @@
       const p = document.getElementById('popup');
       p.style.display = (p.style.display === 'block') ? 'none' : 'block';
     }
-    // 3秒後に文字を塗りつぶす
+   
     setTimeout(() => {
       document.querySelectorAll('.autumn-text').forEach(t => {
         t.setAttribute('fill', '#FFFCBF');
