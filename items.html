@@ -1,113 +1,104 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <title>Items - Spring Camp 2025</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
-  <style>
-    body {
-      background-color: #F9EFE6; /* 表紙・スケジュールの背景色 */
-      font-family: 'M PLUS Rounded 1c', sans-serif;
-      margin: 0;
-      padding: 20px;
-      color: #584439; /* 全体の文字色をブラウンに */
-    }
+  <meta charset="UTF-8">
+  <title>Items - Spring Camp 2025</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #F9EFE6;
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      margin: 0;
+      padding: 20px;
+      color: #584439;
+    }
 
-    .container-box {
-      max-width: 600px;
-      margin: 0 auto;
-      background-color: #fff;
-      border: 1.5px solid #584439; /* チーム一覧と同じ枠線 */
-      border-radius: 16px;
-      padding: 24px;
-      box-shadow: 0 4px 10px rgba(88, 68, 57, 0.1);
-      text-align: left;
-    }
+    .container-box {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #fff;
+      border: 1.5px solid #584439;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 4px 10px rgba(88, 68, 57, 0.1);
+      text-align: left;
+    }
 
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 40px;
-      color: #584439; /* タイトルをブラウンに */
-      margin: 16px 0 30px;
-      text-align: center;
-      position: relative;
-      opacity: 0;
-      animation: fadeInUp 1.2s ease-out forwards;
-    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 40px;
+      color: #584439;
+      margin: 16px 0 30px;
+      text-align: center;
+      position: relative;
+      opacity: 0;
+      animation: fadeInUp 1.2s ease-out forwards;
+    }
 
-    /* タイトルの下のラインを追加 */
-    h1::after {
-      content: '';
-      position: absolute;
-      left: 50%;
-      bottom: -8px;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 1.5px;
-      background-color: #584439;
-    }
+    h1::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: -8px;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 1.5px;
+      background-color: #584439;
+    }
 
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-    .category-title {
-      font-size: 18px;
-      font-weight: bold;
-      color: #584439;
-      margin: 24px 0 12px;
-      border-bottom: 1px dashed #584439; /* 点線にして少し柔らかい印象に */
-      padding-bottom: 4px;
-    }
+    .category-title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #584439;
+      margin: 24px 0 12px;
+      border-bottom: 1px dashed #584439;
+      padding-bottom: 4px;
+    }
 
-    .checklist label {
-      display: block;
-      font-size: 16px;
-      color: #333;
-      margin-bottom: 10px;
-      cursor: pointer;
-    }
+    .checklist label {
+      display: block;
+      font-size: 16px;
+      color: #333;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
 
-    .checklist input[type="checkbox"] {
-      accent-color: #584439; /* チェックした時の色をブラウンに */
-      margin-right: 10px;
-      transform: scale(1.2);
-    }
+    .checklist input[type="checkbox"] {
+      accent-color: #584439;
+      margin-right: 10px;
+      transform: scale(1.2);
+    }
 
-    .note {
-      display: block;        
-      font-size: 13px;
-      color: #777;
-      margin-left: 28px;      
-      margin-top: 2px;        
-    }
+    .note {
+      display: block;        
+      font-size: 13px;
+      color: #777;
+      margin-left: 28px;      
+      margin-top: 2px;        
+    }
 
-    .back-btn {
-      display: block;
-      width: fit-content;
-      margin: 30px auto;
-      text-decoration: none;
-      color: #584439;
-      font-family: 'Playfair Display', serif;
-      border: 1px solid #584439;
-      padding: 10px 20px;
-      border-radius: 20px;
-      background-color: #fff;
-    }
-  </style>
+    .back-btn {
+      display: block;
+      width: fit-content;
+      margin: 30px auto;
+      text-decoration: none;
+      color: #584439;
+      font-family: 'Playfair Display', serif;
+      border: 1px solid #584439;
+      padding: 10px 20px;
+      border-radius: 20px;
+      background-color: #fff;
+    }
+  </style>
 </head>
 <body>
-
-  <body>
 
   <h1>Items</h1>
 
@@ -159,6 +150,6 @@
   </div>
 
   <a href="index.html" class="back-btn">← Back to Top</a>
+
 </body>
 </html>
-
