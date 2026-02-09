@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -79,12 +78,12 @@
      content: '';
      position: absolute;
      left: 0;
-     top: 55%; /* 文字の高さに合わせて調整 */
+     top: 55%; 
      transform: translateY(-50%);
-     width: 6px;  /* 丸の大きさ（小さめに設定） */
+     width: 6px;  
      height: 6px;
      background-color: #584439;
-     border-radius: 50%; /* 正円にする */
+     border-radius: 50%; 
    }
     
     .autumn-link::after {
@@ -106,17 +105,16 @@
     
    @keyframes drawLineFull {
       from { width: 0; }
-      to { width: calc(100% - 0.5em); } /* 全体から・の分を引いた長さ */
+      to { width: calc(100% - 0.5em); } 
     }
     
    @keyframes drawLineShort {
       from { width: 0; }
-      to { width: calc(95% - 0.4em); } /* 3分の2から・の分を引いた長さ */
+      to { width: calc(95% - 0.4em); } 
     }
 
 .popup-box {
   position: absolute;
-  /* 画面の縦横中央に配置するためのセット */
   top: 50%; 
   left: 50%;
   transform: translate(-50%, -50%); 
@@ -180,12 +178,12 @@
 }
     .footer-text {
       position: absolute;
-      bottom: 12px; /* 下からの距離 */
-      left: 20px;   /* 左からの距離 */
+      bottom: 12px; 
+      left: 20px;   
       font-family: 'Playfair Display', serif;
-      font-size: 14px; /* 小さめに設定 */
+      font-size: 14px; 
       color: #584439;
-      opacity: 0.8;    /* 少し透かせて馴染ませる */
+      opacity: 0.8;   
       z-index: 50;
       letter-spacing: 0.05em;
     }
