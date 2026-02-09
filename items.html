@@ -1,144 +1,147 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <title>Items - Spring Camp 2025</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
-  <style>
-    body {
-      background-color: #f6b7aa;
-      font-family: 'M PLUS Rounded 1c', sans-serif;
-      margin: 0;
-      padding: 20px;
-      color: #584439;
-    }
+  <meta charset="UTF-8">
+  <title>Items - Spring Camp 2025</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Playfair+Display&display=swap" rel="stylesheet">
+  
+  <style>
+    /* 1枚で完結するようにスタイルを定義 */
+    body {
+      background-color: #f6b7aa; /* 以前のピンクを維持 */
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      margin: 0;
+      padding: 20px;
+      color: #584439;
+    }
 
-    .container-box {
-      max-width: 600px;
-      margin: 0 auto;
-      background-color: #fff;
-      border: 1.5px solid #584439;
-      border-radius: 16px;
-      padding: 24px;
-      box-shadow:  4px 10px rgba(88, 68, 57, 0.1);
-      text-align: left;
-    }
+    /* タイトル */
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 60px;
+      color: #584439;
+      margin: 10px 0 20px; /* 余白を微調整 */
+      text-align: center;
+      opacity: 0;
+      animation: fadeInUp 1.2s ease-out forwards;
+    }
 
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 60px;
-      color: #584439;
-      margin: -20px 0 10px;
-      text-align: center;
-      position: relative;
-      opacity: 0;
-      animation: fadeInUp 1.2s ease-out forwards;
-    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-    
+    /* 白い枠のコンテナ */
+    .container-box {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #fff;
+      border: 1.5px solid #584439;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 4px 10px rgba(88, 68, 57, 0.1);
+      text-align: left;
+    }
 
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    .category-title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #584439;
+      margin: 24px 0 12px;
+      border-bottom: 1px dashed #584439;
+      padding-bottom: 4px;
+    }
 
-    .category-title {
-      font-size: 18px;
-      font-weight: bold;
-      color: #584439;
-      margin: 24px 0 12px;
-      border-bottom: 1px dashed #584439;
-      padding-bottom: 4px;
-    }
+    .checklist label {
+      display: block;
+      font-size: 16px;
+      color: #333;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
 
-    .checklist label {
-      display: block;
-      font-size: 16px;
-      color: #333;
-      margin-bottom: 10px;
-      cursor: pointer;
-    }
+    .checklist input[type="checkbox"] {
+      accent-color: #584439;
+      margin-right: 10px;
+      transform: scale(1.2);
+    }
 
-    .checklist input[type="checkbox"] {
-      accent-color: #584439;
-      margin-right: 10px;
-      transform: scale(1.2);
-    }
+    .note {
+      display: block;        
+      font-size: 13px;
+      color: #777;
+      margin-left: 28px;      
+      margin-top: 2px;        
+    }
 
-    .note {
-      display: block;        
-      font-size: 13px;
-      color: #777;
-      margin-left: 28px;      
-      margin-top: 2px;        
-    }
-
-    .back-btn {
-      display: block;
-      width: fit-content;
-      margin: 30px auto;
-      text-decoration: none;
-      color: #584439;
-      font-family: 'Playfair Display', serif;
-      border: 1px solid #584439;
-      padding: 10px 20px;
-      border-radius: 20px;
-      background-color: #fff;
-    }
-  </style>
+    /* 戻るボタンのデザイン */
+    .back-btn {
+      display: block;
+      width: fit-content;
+      margin: 30px auto;
+      text-decoration: none;
+      color: #584439;
+      font-family: 'Playfair Display', serif;
+      border: 1px solid #584439;
+      padding: 10px 20px;
+      border-radius: 20px;
+      background-color: #fff;
+    }
+  </style>
 </head>
 <body>
 
-  <h1>Items</h1>
+  <h1>Items</h1>
 
-  <div class="container-box">
-    <div class="checklist">
-      <div class="category-title" style="margin-top: 0;">日用品</div>
-      <label><input type="checkbox">歯ブラシ</label>
-      <label><input type="checkbox">ハンカチ</label>
-      <label><input type="checkbox">ティッシュ</label>
-      <label><input type="checkbox">汗拭きシート</label>
-      <label><input type="checkbox">眼鏡・コンタクト</label>
-      <label><input type="checkbox">日焼け止め</label>
-      <label><input type="checkbox">ドライヤー・ヘアアイロン</label>
-      <label>
-        <input type="checkbox">シャンプー・コンディショナー
-        <span class="note">（備え付け有）</span>
-      </label>
-      <label><input type="checkbox">洗顔料・メイク落とし・化粧品</label>
-      <label><input type="checkbox">剃刀・髭剃り</label>
-      <label><input type="checkbox">くし・整髪料</label>
-      <label><input type="checkbox">生理用品</label>
-      <label><input type="checkbox">常備薬</label>
+  <div class="container-box">
+    <div class="checklist">
+      <div class="category-title" style="margin-top: 0;">日用品</div>
+      <label><input type="checkbox">歯ブラシ</label>
+      <label><input type="checkbox">ハンカチ</label>
+      <label><input type="checkbox">ティッシュ</label>
+      <label><input type="checkbox">汗拭きシート</label>
+      <label><input type="checkbox">眼鏡・コンタクト</label>
+      <label><input type="checkbox">日焼け止め</label>
+      <label><input type="checkbox">ドライヤー・ヘアアイロン</label>
+      <label>
+        <input type="checkbox">シャンプー・コンディショナー
+        <span class="note">（備え付け有）</span>
+      </label>
+      <label><input type="checkbox">洗顔料・メイク落とし・化粧品</label>
+      <label><input type="checkbox">剃刀・髭剃り</label>
+      <label><input type="checkbox">くし・整髪料</label>
+      <label><input type="checkbox">生理用品</label>
+      <label><input type="checkbox">常備薬</label>
 
-      <div class="category-title">電子機器</div>
-      <label><input type="checkbox">スマホ</label>
-      <label><input type="checkbox">充電器</label>
-      <label><input type="checkbox">モバイルバッテリー</label>
+      <div class="category-title">電子機器</div>
+      <label><input type="checkbox">スマホ</label>
+      <label><input type="checkbox">充電器</label>
+      <label><input type="checkbox">モバイルバッテリー</label>
 
-      <div class="category-title">衣類</div>
-      <label><input type="checkbox">着替え</label>
-      <label><input type="checkbox">下着・靴下</label>
-      <label><input type="checkbox">パジャマ</label>
-      <label><input type="checkbox">スポーツウェア(運動着3日分)</label>
-      <label><input type="checkbox">ウィンドブレーカー</label>
-      <label><input type="checkbox">タオル</label>
+      <div class="category-title">衣類</div>
+      <label><input type="checkbox">着替え</label>
+      <label><input type="checkbox">下着・靴下</label>
+      <label><input type="checkbox">パジャマ</label>
+      <label><input type="checkbox">スポーツウェア(運動着3日分)</label>
+      <label><input type="checkbox">ウィンドブレーカー</label>
+      <label><input type="checkbox">タオル</label>
 
-      <div class="category-title">貴重品</div>
-      <label><input type="checkbox">財布</label>
-      <label><input type="checkbox">合宿費</label>
-      <label><input type="checkbox">交通費</label>
-      <span class="note">（合宿費に含まれていません）</span>
-      <label><input type="checkbox">保険証</label>
+      <div class="category-title">貴重品</div>
+      <label><input type="checkbox">財布</label>
+      <label><input type="checkbox">合宿費</label>
+      <label><input type="checkbox">交通費</label>
+      <span class="note">（合宿費に含まれていません）</span>
+      <label><input type="checkbox">保険証</label>
 
-      <div class="category-title">その他</div>
-      <label><input type="checkbox">1日目のお昼</label>
-      <label><input type="checkbox">テニスラケット</label>
-      <label><input type="checkbox">テニスシューズ・体育館シューズ</label>
-    </div>
-  </div>
+      <div class="category-title">その他</div>
+      <label><input type="checkbox">1日目のお昼</label>
+      <label><input type="checkbox">テニスラケット</label>
+      <label><input type="checkbox">テニスシューズ・体育館シューズ</label>
+    </div>
+  </div>
+
+  <a href="index.html" class="back-btn">Back to Top</a>
 
 </body>
-</html>　　　　　　　　　item.htmlの中身です
+</html>
