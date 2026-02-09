@@ -1,0 +1,57 @@
+/* common.css */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  color: #584439;
+  background-color: #F9EFE6;
+}
+
+/* タイトルなどの共通フォント */
+.playfair {
+  font-family: 'Playfair Display', serif;
+}
+
+/* 共通フェードインアニメーション */
+.fade-up {
+  opacity: 0;
+  animation: fadeSlideUp 1.5s ease-out forwards;
+}
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 左下のフッターテキスト */
+.footer-text {
+  position: absolute;
+  bottom: 12px;
+  left: 20px;
+  font-family: 'Playfair Display', serif;
+  font-size: 14px;
+  color: #584439;
+  opacity: 0.8;
+  z-index: 50;
+  letter-spacing: 0.05em;
+}
+/* common.css に追加 */
+.container-box {
+  max-width: 600px;
+  margin: 10px auto;
+  background-color: #fff;
+  border: 1.5px solid #584439;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 4px 10px rgba(88, 68, 57, 0.1);
+  text-align: left;
+}
+
+.category-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #584439;
+  margin: 24px 0 12px;
+  border-bottom: 1px dashed #584439;
+  padding-bottom: 4px;
+}
