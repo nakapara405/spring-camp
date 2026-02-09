@@ -227,6 +227,23 @@
     </ul>
   </div>
 </div>
+   <script>
+
+    function togglePopup() {
+      const p = document.getElementById('popup');
+      p.style.display = (p.style.display === 'block') ? 'none' : 'block';
+    }
+
+    setTimeout(() => {
+      document.querySelectorAll('.autumn-text').forEach(t => {
+        t.setAttribute('fill', '#FFFCBF');
+        t.setAttribute('stroke', 'none');
+
+      });
+
+    }, 3000);
+
+  </script>
 
   <div class="footer-text">Belle breeze 2026</div>
 </body>
