@@ -87,16 +87,27 @@
     }
 
     
-    .category-title::after {
+    /* 「買ったもの」セクション用：アコーディオン見出し */
+    #shopping .category-title {
+      cursor: pointer;
+    }
+
+    /* 「買ったもの」セクションのみプラス・マイナス記号を表示 */
+    #shopping .category-title::after {
       content: '＋';
       font-size: 14px;
     }
-    .category-title.open::after {
+    #shopping .category-title.open::after {
       content: 'ー';
     }
 
-   
-    .accordion-content {
+    /* 「持ち物」セクションのタイトル（記号なし・クリック不可） */
+    #belongings .category-title {
+      cursor: default;
+    }
+
+    /* リストの中身（買ったものセクションは初期非表示） */
+    #shopping .accordion-content {
       display: none;
       margin-bottom: 20px;
     }
