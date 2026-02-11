@@ -13,6 +13,7 @@
       margin: 0;
       padding: 20px;
       color: #584439;
+      text-align: center;
     }
 
   
@@ -29,6 +30,35 @@
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
+    }
+    .button-group {
+      margin-bottom: 30px;
+    }
+
+    .toggle-btn {
+      background-color: #584439; 
+      color: white;
+      border: none;
+      padding: 10px 24px;
+      margin: 0 10px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+    }
+    .toggle-btn:hover {
+      background-color: #3a8ca8;
+    }
+
+    
+    .member-section { /* 参考コードのクラス名を使用 */
+      display: none;
+    }
+
+    .member-section.active {
+      display: block;
     }
 
    
@@ -81,7 +111,12 @@
 <body>
 
   <h1>Items</h1>
+  <div class="button-group">
+    <button class="toggle-btn" onclick="showSection('belongings')">持ち物</button>
+    <button class="toggle-btn" onclick="showSection('shopping')">買うもの</button>
+  </div>
 
+  <div id="belongings" class="member-section active">
   <div class="container-box">
     <div class="checklist">
       <div class="category-title" style="margin-top: 0;">日用品</div>
@@ -129,6 +164,28 @@
     </div>
   </div>
 
+    <div id="shopping" class="member-section">
+    <div class="container-box">
+      <div class="checklist">
+        <div class="category-title" style="margin-top: 0;">買い出しリスト</div>
+        <label><input type="checkbox">予備のグリップテープ</label>
+        <label><input type="checkbox">日焼け止め（SPF強め）</label>
+        <label><input type="checkbox">スポーツ飲料の粉末</label>
+        <label><input type="checkbox">移動中のおやつ</label>
+        <label><input type="checkbox">シャンプー用ミニボトル</label>
+        <span class="note">（現地で買う場合は空欄でOK）</span>
+      </div>
+    </div>
+  </div>
+    <script>
+   
+    function showSection(id) {
+      document.querySelectorAll('.member-section').forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
   
 </body>
 </html>
