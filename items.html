@@ -81,6 +81,65 @@
       padding-bottom: 4px;
     }
 
+    /* リストの基本スタイル（ポツを消す） */
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    /* お菓子用：シンプルな箇条書き */
+    .snack-list li {
+      font-size: 16px;
+      color: #333;
+      margin-bottom: 6px;
+      padding-left: 1.2em;
+      position: relative;
+    }
+    .snack-list li::before {
+      content: "・";
+      position: absolute;
+      left: 0;
+      color: #584439;
+      font-weight: bold;
+    }
+
+    /* 飲み物・お酒用：左右両端に揃えるスタイル */
+    .drink-list li {
+      display: flex;
+      justify-content: space-between; /* これで左右に分かれます */
+      align-items: baseline;
+      font-size: 16px;
+      color: #333;
+      margin-bottom: 8px;
+      border-bottom: 1px solid #f2f2f2; /* 行の区切り線（Excel風） */
+      padding-bottom: 2px;
+    }
+
+    .item-name {
+      padding-left: 1.2em;
+      position: relative;
+      flex: 1; /* 左側を広げる */
+    }
+
+    .item-name::before {
+      content: "・";
+      position: absolute;
+      left: 0;
+      color: #584439;
+      font-weight: bold;
+    }
+
+    /* 右側の容量・数量 */
+    .amount {
+      color: #584439;
+      font-weight: bold;
+      text-align: right;
+      margin-left: 10px;
+      min-width: 80px; /* 右側の位置を安定させる */
+    }
+
+    /* 持ち物リスト用 */
     .checklist label {
       display: block;
       font-size: 16px;
@@ -95,13 +154,18 @@
       transform: scale(1.2);
     }
 
-    .item-list {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
+    .caution-text {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #fff5f5;
+      border-radius: 8px;
+      font-size: 14px;
+      color: #d9534f;
+      font-weight: bold;
+      line-height: 1.6;
+      border: 1px dashed #d9534f;
     }
 
-   
     .note {
       display: block;        
       font-size: 13px;
@@ -168,7 +232,7 @@
   <div id="shopping" class="member-section">
     <div class="container-box">
       <div class="category-title" style="margin-top: 0;">お菓子 🍪</div>
-      <ul class="item-list">
+      <ul class="snack-list">
         <li>たべっこ水族館</li>
         <li>たべっこ動物バター</li>
         <li>カントリーマアム</li>
@@ -185,7 +249,7 @@
         <li>プリッツ旨サラダ</li>
         <li>芋けんぴ</li>
         <li>チータラ ×2</li>
-        <li>チョコ棒30本</li>
+        <li>チョコ棒 30本</li>
         <li>チョコパイ</li>
         <li>ベビースターラーメン</li>
         <li>ブラックサンダー</li>
@@ -198,8 +262,8 @@
         <li>歌舞伎揚</li>
       </ul>
 
-     <div class="category-title">飲み物（ソフトドリンク） 🥤</div>
-      <ul class="item-list">
+      <div class="category-title">飲み物（ソフトドリンク） 🥤</div>
+      <ul class="drink-list">
         <li><span class="item-name">小岩井純水みかん</span><span class="amount">1.5L ×2</span></li>
         <li><span class="item-name">午後の紅茶ミルクティー</span><span class="amount">1.5L</span></li>
         <li><span class="item-name">コカ・コーラ</span><span class="amount">1.5L</span></li>
@@ -207,48 +271,4 @@
         <li><span class="item-name">カルピスウォーター</span><span class="amount">1.5L ×2</span></li>
         <li><span class="item-name">緑茶</span><span class="amount">2L ×2</span></li>
         <li><span class="item-name">烏龍茶</span><span class="amount">1L</span></li>
-        <li><span class="item-name">強炭酸水</span><span class="amount">1L ×4</span></li>
-      </ul>
-
-      <div class="category-title">お酒 🍺</div>
-      <ul class="item-list">
-        <li>ほろよい 350ml ×20</li>
-        <li>氷結レモン 350ml ×3</li>
-        <li>氷結グレープフルーツ 350ml ×3</li>
-        <li>氷結パイナップル 350ml</li>
-        <li>氷彩1984 350ml ×2</li>
-        <li>男梅サワー 350ml ×2</li>
-        <li>贅沢絞り 350ml ×2</li>
-        <li>濃いめのレモンサワー 350ml ×2</li>
-        <li>麒麟特製ホワイトサワー 500ml</li>
-        <li>ストロングゼロ梅 500ml</li>
-        <li>本絞りグレープフルーツ 500ml ×2</li>
-        <li>檸檬堂 白桃とレモン 350ml ×3</li>
-        <li>氷結 500ml ×2</li>
-        <li>こだわりレモンサワー 500ml ×3</li>
-        <li>ブラックニッカ 1900ml</li>
-        <li>スミノフグレープ750ml</li>
-        <li>チャミスル360ml ×3</li>
-        <li>茉莉花焼酎600ml</li>
-        <li>濃厚梅酒 1.8L</li>
-        <li>亀甲宮焼酎 1.8L</li>
-      </ul>
-
-      <div class="caution-text">
-        ※お茶割系がなかったので焼酎を割り材で割ってほしいです
-      </div>
-    </div>
-  </div>
-
-
-  <script>
-    function showSection(id) {
-      document.querySelectorAll('.member-section').forEach(section => {
-        section.classList.remove('active');
-      });
-      document.getElementById(id).classList.add('active');
-    }
-  </script>
-
-</body>
-</html>
+        <li><span class="
