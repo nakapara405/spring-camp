@@ -30,6 +30,7 @@
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
     .button-group {
       margin-bottom: 30px;
     }
@@ -47,6 +48,7 @@
       transition: background-color 0.3s ease;
       font-family: 'M PLUS Rounded 1c', sans-serif;
     }
+
     .toggle-btn:hover {
       background-color: #3a8ca8;
     }
@@ -105,9 +107,10 @@
 <body>
 
   <h1>Items</h1>
+  
   <div class="button-group">
     <button class="toggle-btn" onclick="showSection('belongings')">持ち物</button>
-    <button class="toggle-btn" onclick="showSection('shopping')">買うもの</button>
+    <button class="toggle-btn" onclick="showSection('shopping')">買ったもの</button>
   </div>
 
   <div id="belongings" class="member-section active">
@@ -121,10 +124,7 @@
         <label><input type="checkbox">眼鏡・コンタクト</label>
         <label><input type="checkbox">日焼け止め</label>
         <label><input type="checkbox">ドライヤー・ヘアアイロン</label>
-        <label>
-          <input type="checkbox">シャンプー・コンディショナー
-          <span class="note">（備え付け有）</span>
-        </label>
+        <label><input type="checkbox">シャンプー・コンディショナー<span class="note">（備え付け有）</span></label>
         <label><input type="checkbox">洗顔料・メイク落とし・化粧品</label>
         <label><input type="checkbox">剃刀・髭剃り</label>
         <label><input type="checkbox">くし・整髪料</label>
@@ -147,8 +147,7 @@
         <div class="category-title">貴重品</div>
         <label><input type="checkbox">財布</label>
         <label><input type="checkbox">合宿費</label>
-        <label><input type="checkbox">交通費</label>
-        <span class="note">（合宿費に含まれていません）</span>
+        <label><input type="checkbox">交通費<span class="note">（合宿費に含まれていません）</span></label>
         <label><input type="checkbox">保険証</label>
 
         <div class="category-title">その他</div>
@@ -157,20 +156,72 @@
         <label><input type="checkbox">テニスシューズ・体育館シューズ</label>
       </div>
     </div>
-  <div id="shopping" class="member-section">
-  <div class="container-box">
-    <div class="checklist">
-      <div class="category-title" style="margin-top: 0;">お菓子 🍪</div>
-      <label><input type="checkbox">たべっこ水族館</label>
-      <label><input type="checkbox">たべっこ動物バター</label>
-      <label><input type="checkbox">カントリーマアム</label>
-      <div class="category-title">飲み物・お酒 🍻</div>
-      <label><input type="checkbox">小岩井純水みかん 1.5L×2</label>
-      <label><input type="checkbox">氷結レモン 350ml×3</label>
-      <label><input type="checkbox">ブラックニッカ 1900ml</label>
-      </div>
   </div>
-</div>
+
+  <div id="shopping" class="member-section">
+    <div class="container-box">
+      <div class="checklist">
+        <div class="category-title" style="margin-top: 0;">お菓子 🍪</div>
+        <label><input type="checkbox">たべっこ水族館</label>
+        <label><input type="checkbox">たべっこ動物バター</label>
+        <label><input type="checkbox">カントリーマアム</label>
+        <label><input type="checkbox">ホームパイ</label>
+        <label><input type="checkbox">茎わかめ ×2</label>
+        <label><input type="checkbox">堅あげポテトブラックペッパー</label>
+        <label><input type="checkbox">堅あげポテト焼きのり</label>
+        <label><input type="checkbox">ポテチコンソメBIG</label>
+        <label><input type="checkbox">サッポロポテトバーベキューあじ</label>
+        <label><input type="checkbox">瀬戸しおアソート</label>
+        <label><input type="checkbox">無限エビせんべい</label>
+        <label><input type="checkbox">海苔天チップス</label>
+        <label><input type="checkbox">源氏パイ</label>
+        <label><input type="checkbox">プリッツ旨サラダ</label>
+        <label><input type="checkbox">芋けんぴ</label>
+        <label><input type="checkbox">チータラ ×2</label>
+        <label><input type="checkbox">チョコ棒30本</label>
+        <label><input type="checkbox">チョコパイ</label>
+        <label><input type="checkbox">ベビースターラーメン</label>
+        <label><input type="checkbox">ブラックサンダー</label>
+        <label><input type="checkbox">オレオ</label>
+        <label><input type="checkbox">ドライマンゴー</label>
+        <label><input type="checkbox">キットカット抹茶</label>
+        <label><input type="checkbox">チーズアーモンド</label>
+        <label><input type="checkbox">極細ポッキー</label>
+        <label><input type="checkbox">リッツクラッカー</label>
+        <label><input type="checkbox">歌舞伎揚</label>
+
+        <div class="category-title">飲み物（ソフトドリンク） 🥤</div>
+        <label><input type="checkbox">小岩井純水みかん 1.5L ×2</label>
+        <label><input type="checkbox">午後の紅茶ミルクティー 1.5L</label>
+        <label><input type="checkbox">コカ・コーラ 1.5L</label>
+        <label><input type="checkbox">三ツ矢サイダー 1.5L</label>
+        <label><input type="checkbox">カルピスウォーター 1.5L ×2</label>
+        <label><input type="checkbox">緑茶 2L ×2</label>
+        <label><input type="checkbox">烏龍茶 1L</label>
+        <label><input type="checkbox">強炭酸水 1L ×4</label>
+
+        <div class="category-title">お酒 🍺</div>
+        <label><input type="checkbox">氷結レモン 350ml ×3</label>
+        <label><input type="checkbox">氷結グレープフルーツ 350ml ×3</label>
+        <label><input type="checkbox">氷結パイナップル 350ml ×1</label>
+        <label><input type="checkbox">氷彩1984 350ml ×2</label>
+        <label><input type="checkbox">男梅サワー 350ml ×2</label>
+        <label><input type="checkbox">贅沢絞り 350ml ×2</label>
+        <label><input type="checkbox">濃いめのレモンサワー 350ml ×2</label>
+        <label><input type="checkbox">麒麟特製ホワイトサワー 500ml ×1</label>
+        <label><input type="checkbox">ストロングゼロ梅 500ml ×1</label>
+        <label><input type="checkbox">本絞りグレープフルーツ 500ml ×2</label>
+        <label><input type="checkbox">季節の檸檬堂白桃とレモン 350ml ×3</label>
+        <label><input type="checkbox">氷結 500ml ×2</label>
+        <label><input type="checkbox">こだわり酒場のレモンサワー 500ml ×3</label>
+        <label><input type="checkbox">ブラックニッカ 1900ml ×1</label>
+        <label><input type="checkbox">スミノフグレープ ×1</label>
+        <label><input type="checkbox">チャミスル ×3</label>
+        <label><input type="checkbox">濃厚梅酒 1.8L</label>
+        <label><input type="checkbox">亀甲宮焼酎 1.8L</label>
+      </div>
+    </div>
+  </div>
 
   <script>
     function showSection(id) {
@@ -180,6 +231,6 @@
       document.getElementById(id).classList.add('active');
     }
   </script>
-  
+
 </body>
 </html>
