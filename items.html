@@ -72,23 +72,41 @@
       text-align: left;
     }
 
+    /* アコーディオンの見出し */
     .category-title {
       font-size: 18px;
       font-weight: bold;
       color: #584439;
-      margin: 24px 0 12px;
+      margin: 12px 0;
       border-bottom: 1px dashed #584439;
-      padding-bottom: 4px;
+      padding: 8px 0;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    /* リストの基本スタイル（ポツを消す） */
+    /* プラス・マイナス記号の表示 */
+    .category-title::after {
+      content: '＋';
+      font-size: 14px;
+    }
+    .category-title.open::after {
+      content: 'ー';
+    }
+
+    /* リストの中身（初期は非表示） */
+    .accordion-content {
+      display: none;
+      margin-bottom: 20px;
+    }
+
     ul {
       list-style-type: none;
       padding: 0;
       margin: 0;
     }
 
-    
     .snack-list li {
       font-size: 16px;
       color: #333;
@@ -104,219 +122,8 @@
       font-weight: bold;
     }
 
-    
     .drink-list li {
       display: flex;
       justify-content: space-between; 
       align-items: baseline;
-      font-size: 16px;
-      color: #333;
-      margin-bottom: 8px;
-      border-bottom: 1px solid #f2f2f2; 
-      padding-bottom: 2px;
-    }
-
-    .item-name {
-      padding-left: 1.2em;
-      position: relative;
-      flex: 1; 
-    }
-
-    .item-name::before {
-      content: "・";
-      position: absolute;
-      left: 0;
-      color: #584439;
-      font-weight: bold;
-    }
-
-    
-    .amount {
-      color: #584439;
-      font-weight: bold;
-      text-align: right;
-      margin-left: 10px;
-      min-width: 80px; 
-    }
-
-    
-    .checklist label {
-      display: block;
-      font-size: 16px;
-      color: #333;
-      margin-bottom: 10px;
-      cursor: pointer;
-    }
-
-    .checklist input[type="checkbox"] {
-      accent-color: #584439;
-      margin-right: 10px;
-      transform: scale(1.2);
-    }
-
-    .caution-text {
-      margin-top: 20px;
-      padding: 15px;
-      background-color: #fff5f5;
-      border-radius: 8px;
-      font-size: 14px;
-      color: #d9534f;
-      font-weight: bold;
-      line-height: 1.6;
-      border: 1px dashed #d9534f;
-    }
-
-    .note {
-      display: block;        
-      font-size: 13px;
-      color: #777;
-      margin-left: 28px;      
-      margin-top: 2px;        
-    }
-  </style>
-</head>
-<body>
-
-  <h1>Items</h1>
-  
-  <div class="button-group">
-    <button class="toggle-btn" onclick="showSection('belongings')">持ち物</button>
-    <button class="toggle-btn" onclick="showSection('shopping')">買ったもの</button>
-  </div>
-
-  <div id="belongings" class="member-section active">
-    <div class="container-box">
-      <div class="checklist">
-        <div class="category-title" style="margin-top: 0;">日用品</div>
-        <label><input type="checkbox">歯ブラシ</label>
-        <label><input type="checkbox">ハンカチ</label>
-        <label><input type="checkbox">ティッシュ</label>
-        <label><input type="checkbox">汗拭きシート</label>
-        <label><input type="checkbox">眼鏡・コンタクト</label>
-        <label><input type="checkbox">日焼け止め</label>
-        <label><input type="checkbox">ドライヤー・ヘアアイロン</label>
-        <label><input type="checkbox">シャンプー・コンディショナー<span class="note">（備え付け有）</span></label>
-        <label><input type="checkbox">洗顔料・メイク落とし・化粧品</label>
-        <label><input type="checkbox">剃刀・髭剃り</label>
-        <label><input type="checkbox">くし・整髪料</label>
-        <label><input type="checkbox">生理用品</label>
-        <label><input type="checkbox">常備薬</label>
-
-        <div class="category-title">電子機器</div>
-        <label><input type="checkbox">スマホ</label>
-        <label><input type="checkbox">充電器</label>
-        <label><input type="checkbox">モバイルバッテリー</label>
-
-        <div class="category-title">衣類</div>
-        <label><input type="checkbox">着替え</label>
-        <label><input type="checkbox">下着・靴下</label>
-        <label><input type="checkbox">パジャマ</label>
-        <label><input type="checkbox">スポーツウェア(運動着3日分)</label>
-        <label><input type="checkbox">ウィンドブレーカー</label>
-        <label><input type="checkbox">タオル</label>
-
-        <div class="category-title">貴重品</div>
-        <label><input type="checkbox">財布</label>
-        <label><input type="checkbox">合宿費</label>
-        <label><input type="checkbox">交通費<span class="note">（合宿費に含まれていません）</span></label>
-        <label><input type="checkbox">保険証</label>
-
-        <div class="category-title">その他</div>
-        <label><input type="checkbox">1日目のお昼</label>
-        <label><input type="checkbox">テニスラケット</label>
-        <label><input type="checkbox">テニスシューズ・体育館シューズ</label>
-      </div>
-    </div>
-  </div>
-
-  <div id="shopping" class="member-section">
-    <div class="container-box">
-      <div class="category-title" style="margin-top: 0;">お菓子</div>
-      <ul class="snack-list">
-        <li>たべっこ水族館</li>
-        <li>たべっこ動物バター</li>
-        <li>カントリーマアム</li>
-        <li>ホームパイ</li>
-        <li>茎わかめ ×2</li>
-        <li>堅あげポテトブラックペッパー</li>
-        <li>堅あげポテト焼きのり</li>
-        <li>ポテチコンソメBIG</li>
-        <li>ポテチのり塩超ド級</li>
-        <li>カラムーチョ超ド級</li>
-        <li>カルパス</li>
-        <li>柿の種</li>
-        <li>サッポロポテトバーベキューあじ</li>
-        <li>瀬戸しおアソート</li>
-        <li>無限エビせんべい</li>
-        <li>海苔天チップス</li>
-        <li>源氏パイ</li>
-        <li>プリッツ旨サラダ</li>
-        <li>芋けんぴ</li>
-        <li>チータラ ×2</li>
-        <li>チョコ棒 30本</li>
-        <li>チョコパイ</li>
-        <li>ベビースターラーメン</li>
-        <li>ブラックサンダー</li>
-        <li>オレオ</li>
-        <li>ドライマンゴー</li>
-        <li>キットカット抹茶</li>
-        <li>チーズアーモンド</li>
-        <li>極細ポッキー</li>
-        <li>リッツクラッカー</li>
-        <li>歌舞伎揚</li>
-      </ul>
-
-      <div class="category-title">ソフトドリンク</div>
-      <ul class="drink-list">
-        <li><span class="item-name">小岩井純水みかん</span><span class="amount">1.5L ×2</span></li>
-        <li><span class="item-name">午後の紅茶ミルクティー</span><span class="amount">1.5L ×1</span></li>
-        <li><span class="item-name">コカ・コーラ</span><span class="amount">1.5L ×1</span></li>
-        <li><span class="item-name">三ツ矢サイダー</span><span class="amount">1.5L ×1</span></li>
-        <li><span class="item-name">カルピスウォーター</span><span class="amount">1.5L ×2</span></li>
-        <li><span class="item-name">緑茶</span><span class="amount">2L ×2</span></li>
-        <li><span class="item-name">烏龍茶</span><span class="amount">2L ×1</span></li>
-        <li><span class="item-name">強炭酸水</span><span class="amount">1L ×4</span></li>
-      </ul>
-
-      <div class="category-title">お酒 </div>
-      <ul class="drink-list">
-        <li><span class="item-name">ほろよい</span><span class="amount">350ml ×20</span></li>
-        <li><span class="item-name">氷結レモン</span><span class="amount">350ml ×3</span></li>
-        <li><span class="item-name">氷結グレープフルーツ</span><span class="amount">350ml ×3</span></li>
-        <li><span class="item-name">氷結パイナップル</span><span class="amount">350ml ×1</span></li>
-        <li><span class="item-name">氷彩1984</span><span class="amount">350ml ×2</span></li>
-        <li><span class="item-name">男梅サワー</span><span class="amount">350ml ×2</span></li>
-        <li><span class="item-name">贅沢絞り</span><span class="amount">350ml ×2</span></li>
-        <li><span class="item-name">濃いめのレモンサワー</span><span class="amount">350ml ×2</span></li>
-        <li><span class="item-name">檸檬堂　白桃とレモン</span><span class="amount">350ml ×3</span></li>
-        <li><span class="item-name">本麒麟</span><span class="amount">350ml ×6</span></li>
-        <li><span class="item-name">金麦</span><span class="amount">350ml ×8</span></li>
-        <li><span class="item-name">麒麟特製ホワイトサワー</span><span class="amount">500ml ×1</span></li>
-        <li><span class="item-name">ストロングゼロ梅</span><span class="amount">500ml ×1</span></li>
-        <li><span class="item-name">本絞りグレープフルーツ</span><span class="amount">500ml ×2</span></li>
-        <li><span class="item-name">氷結</span><span class="amount">500ml ×2</span></li>
-        <li><span class="item-name">こだわりレモンサワー</span><span class="amount">500ml ×3</span></li>
-        <li><span class="item-name">ブラックニッカ</span><span class="amount">1.9L ×1</span></li>
-        <li><span class="item-name">スミノフグレープ</span><span class="amount">750ml ×1</span></li>
-        <li><span class="item-name">チャミスル</span><span class="amount">360ml ×3</span></li>
-        <li><span class="item-name">濃厚梅酒</span><span class="amount">1.8L</span></li>
-        <li><span class="item-name">亀甲宮焼酎</span><span class="amount">1.8L</span></li>
-      </ul>
-
-      <div class="caution-text">
-        ※お茶割系がなかったので焼酎をお茶で割ってほしいです
-      </div>
-    </div>
-  </div>
-
-  <script>
-    function showSection(id) {
-      document.querySelectorAll('.member-section').forEach(section => {
-        section.classList.remove('active');
-      });
-      document.getElementById(id).classList.add('active');
-    }
-  </script>
-
-</body>
-</html>
+      font-size:
