@@ -339,7 +339,7 @@
   </div>
 
   <script>
-    // セクションの表示切り替え
+    
     function showSection(id) {
       document.querySelectorAll('.member-section').forEach(section => {
         section.classList.remove('active');
@@ -347,7 +347,7 @@
       document.getElementById(id).classList.add('active');
     }
 
-    // アコーディオンの開閉処理
+    
     function toggleAccordion(element) {
       element.classList.toggle('open');
       const content = element.nextElementSibling;
@@ -357,6 +357,25 @@
         content.style.display = "block";
       }
     }
+    
+    const checkboxes = document.querySelectorAll('.checklist input[type="checkbox"]');
+
+    
+    window.addEventListener('load', () => {
+      checkboxes.forEach((cb, index) => {
+        const checked = localStorage.getItem('check_' + index);
+        if (checked === 'true') {
+          cb.checked = true;
+        }
+      });
+    });
+
+    
+    checkboxes.forEach((cb, index) => {
+      cb.addEventListener('change', () => {
+        localStorage.setItem('check_' + index, cb.checked);
+      });
+    });
   </script>
 
 </body>
